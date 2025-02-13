@@ -1,6 +1,7 @@
 body {
   background-color: grey;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -13,10 +14,12 @@ body {
 }
 
 #container {
-  display: block;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
-  height: 250px;
-  width: 250px;
+  height: 500px;
+  width: 500px;
+  border: black solid 2px;
 }
