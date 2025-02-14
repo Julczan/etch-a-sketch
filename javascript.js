@@ -2,14 +2,13 @@ const container = document.querySelector("#container");
 
 // let gridSize = prompt("Enter the number of elements");
 
-for (let i = 0; i < 4; i++) {
-  const row = document.createElement("div");
-  row.setAttribute("id", "row");
-  for (let i = 0; i < 4; i++) {
-    const column = document.createElement("div");
-    column.setAttribute("id", "column");
-    row.appendChild(column);
-  }
+for (let i = 0; i < 100; i++) {
+  const square = document.createElement("div");
+  square.setAttribute("id", "square");
+  square.style["width"] = "10%";
 
-  container.appendChild(row);
+  container.appendChild(square);
 }
+
+//Each element has to be a square
+//while resizing squares have to get smaller
