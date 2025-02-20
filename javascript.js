@@ -13,6 +13,12 @@ function removeChildren() {
   container.replaceChildren();
 }
 
+function randomHexColorCode() {
+  let n = (Math.random() * 0xfffff * 1000000).toString(16);
+  color = "#" + n.slice(0, 6);
+  return color;
+}
+
 function createGrid(rowSize) {
   let calculatedWidth = 100 / rowSize;
 
@@ -24,7 +30,7 @@ function createGrid(rowSize) {
     container.appendChild(square);
 
     square.addEventListener("mouseover", () => {
-      square.style.backgroundColor = "red";
+      square.style.backgroundColor = randomHexColorCode();
     });
   }
 }
@@ -35,8 +41,3 @@ button.addEventListener("click", () => {
   changeGridSize();
 });
 createGrid(4);
-
-//Each element has to be a square
-//while resizing squares have to get smaller
-//removeChild doesn't work on the square
-// how to remove multiple elements from the dom
