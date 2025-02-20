@@ -2,7 +2,15 @@ const container = document.querySelector("#container");
 
 function changeGridSize() {
   let rowSize = prompt("Enter the number of elements");
-  createGrid(rowSize);
+  if (rowSize > 100 || rowSize < 0) {
+    alert("Cannot make that grid");
+  } else {
+    createGrid(rowSize);
+  }
+}
+
+function removeChildren() {
+  container.replaceChildren();
 }
 
 function createGrid(rowSize) {
@@ -23,7 +31,8 @@ function createGrid(rowSize) {
 
 let button = document.querySelector("button");
 button.addEventListener("click", () => {
-  square.remove();
+  removeChildren();
+  changeGridSize();
 });
 createGrid(4);
 
